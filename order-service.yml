@@ -1,0 +1,17 @@
+server:
+  port: 9017    #service port
+
+#eureka:         #tells about the Eureka server details and its refresh time
+#  client:
+#    serviceUrl:
+#      defaultZone: ${EUREKA_URI:http://service-discovery:8761/eureka}
+#    healthcheck:
+#      enabled: true
+
+spring:
+  application:
+    name: order-service   #current service name to be used by the eureka server
+  data:
+    mongodb:
+      database: order-service_db
+      port: 27017
