@@ -4,8 +4,8 @@ server:
 eureka:         #tells about the Eureka server details and its refresh time
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://service-discovery:9019/eureka}
-      #defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      #defaultZone: ${EUREKA_URI:http://service-discovery:9019/eureka}
+      defaultZone: ${EUREKA_URI:http://localhost:9019/eureka}
       healthcheck:
         enabled: true
 
