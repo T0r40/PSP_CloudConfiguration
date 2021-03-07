@@ -1,9 +1,9 @@
 server:
- port: 9016    #default port where the service will be started
+ port: 9016
 
 spring:
  application:
-   name: product-service   #current service name to be used by the eureka server
+   name: product-service
  main:
    allow-bean-definition-overriding: true
  data:
