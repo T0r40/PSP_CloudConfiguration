@@ -1,6 +1,7 @@
 eureka:
+  client:
     serviceUrl:
-      defaultZone: ${http://service-discovery:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://service-discovery:8761/eureka}
 
 spring:
   cloud:
@@ -25,7 +26,7 @@ spring:
         - id: order-service-id
           uri: lb://order-service
           predicates:
-            - Path=/api/v1/orders/** 
+            - Path=/api/v1/orders/**
 
         - id: product-service-id
           uri: lb://product-service
