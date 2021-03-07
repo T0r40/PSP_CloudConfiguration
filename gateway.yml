@@ -1,7 +1,7 @@
-eureka:         #tells about the Eureka server details and its refresh time
+eureka:
  client:
    serviceUrl:
-     defaultZone: ${EUREKA_URI:http://service-discovery:9019/eureka} # Registers the Gateway in Eureka Server
+     defaultZone: ${EUREKA_URI:http://service-discovery:9019/eureka}
 
 spring:
  cloud:
@@ -19,16 +19,16 @@ spring:
            - OPTIONS
      discovery:
        locator:
-         enabled: true #Enable de locator for the services in Eureka Server (Service Discovery)
-         lowerCaseServiceId: true #Gets the service name from Eureka as a lowercase string
+         enabled: true
+         lowerCaseServiceId: true
 
      routes:
-       - id: order-service-id #Order service route declaration
+       - id: order-service-id
          uri: lb://order-service
          predicates:
-           - Path=/api/v1/orders/** #Path to access the service
+           - Path=/api/v1/orders/**
 
-       - id: product-service-id #Product service route declaration
+       - id: product-service-id
          uri: lb://product-service
          predicates:
-           - Path=/api/v1/products/** #Path to access the service
+           - Path=/api/v1/products/**
