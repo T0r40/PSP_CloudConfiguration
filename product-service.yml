@@ -1,11 +1,17 @@
+  
 server:
  port: 9016
+
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: ${EUREKA_URI:http://localhost:9019/eureka}
+     healthcheck:
+       enabled: true
 
 spring:
  application:
    name: product-service
- main:
-   allow-bean-definition-overriding: true
  data:
    mongodb:
      database: product-service_db
