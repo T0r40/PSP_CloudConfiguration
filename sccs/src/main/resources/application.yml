@@ -1,0 +1,24 @@
+server:
+  port: 9018
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/T0r40/PSP_CloudConfiguration
+          force-pull: true
+          clone-on-start: true
+          username: T0r40
+          password: Olal_987123
+          default-label: develop
+        repos:
+          local:
+            uri:  https://github.com/T0r40/PSP_CloudConfiguration
+            force-pull: true
+            clone-on-start: true
+            Username: T0r40
+            password: Olal_987123
+            label: develop
