@@ -1,0 +1,12 @@
+server:
+ port: 8098    #default port where the service will be started
+
+spring:
+ application:
+   name: product-service   #current service name to be used by the eureka server
+ main:
+   allow-bean-definition-overriding: true
+ data:
+   mongodb:
+     database: product-service_db
+     port: 27017
