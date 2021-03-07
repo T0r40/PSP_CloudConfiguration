@@ -1,7 +1,7 @@
 eureka:         #tells about the Eureka server details and its refresh time
  client:
    serviceUrl:
-     defaultZone: ${EUREKA_URI:http://service-discovery:8761/eureka} # Registers the Gateway in Eureka Server
+     defaultZone: ${EUREKA_URI:http://service-discovery:9019/eureka} # Registers the Gateway in Eureka Server
 
 spring:
  cloud:
