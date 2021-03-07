@@ -1,34 +1,33 @@
 eureka:
- client:
-   serviceUrl:
-     defaultZone: ${EUREKA_URI:http://service-discovery:9019/eureka}
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://service-discovery:8761/eureka}
 
 spring:
- cloud:
-   gateway:
-     globalcors:
-       corsConfigurations:
-         '[/**]':
-           allowedOrigins: "*"
-           allowedMethods:
-           - GET
-           - POST
-           - PUT
-           - PATCH
-           - DELETE
-           - OPTIONS
-     discovery:
-       locator:
-         enabled: true
-         lowerCaseServiceId: true
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - PATCH
+            - DELETE
+            - OPTIONS
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
 
-     routes:
-       - id: order-service-id
-         uri: lb://order-service
-         predicates:
-           - Path=/api/v1/orders/**
+      routes:
+        - id: order-service-id
+          uri: lb://order-service
+          predicates:
+            - Path=/api/v1/orders/** 
 
-       - id: product-service-id
-         uri: lb://product-service
-         predicates:
-           - Path=/api/v1/products/**
+        - id: product-service-id
+          uri: lb://product-service
+          predicates:
+            - Path=/api/v1/products/**
