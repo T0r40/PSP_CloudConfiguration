@@ -1,6 +1,5 @@
 server:
  port: 9019
-
 eureka:
  client:
    registerWithEureka: false
